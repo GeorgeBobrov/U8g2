@@ -1,12 +1,16 @@
-# U8g2_Arduino: Arduino Monochrome Graphics Library
+Modification to U8glib V2 library for Arduino.
 
-![https://raw.githubusercontent.com/wiki/olikraus/u8g2/img/uc1701_dogs102_uno_board_320.jpg](https://raw.githubusercontent.com/wiki/olikraus/u8g2/img/uc1701_dogs102_uno_board_320.jpg) 
+Original library from olikraus: https://github.com/olikraus/u8g2
 
-U8glib V2 library for Arduino
+Added feature: drawing dotted lines. 
+The files \U8g2\src\clib\u8g2_hvline.c and \U8g2\src\clib\u8g2.h were modified and the drawDottedLines setting was added.
 
-Description: https://github.com/olikraus/u8g2/wiki
+```c++
+{
+    display.getU8g2()->drawDottedLines = true;
+    display.drawHLine(x, y, round(modeItemWidth));
+    display.getU8g2()->drawDottedLines = false;
+}
+```
 
-Issue Tracker: https://github.com/olikraus/u8g2/issues
-
-Download (2.35.9): https://github.com/olikraus/U8g2_Arduino/archive/master.zip
 

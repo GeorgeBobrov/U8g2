@@ -58,6 +58,17 @@ uint8_t *u8g2_m_16_8_2(uint8_t *page_cnt)
   return buf;
   #endif
 }
+uint8_t *u8g2_m_16_8_4(uint8_t *page_cnt)
+{
+  #ifdef U8G2_USE_DYNAMIC_ALLOC
+  *page_cnt = 4;
+  return 0;
+  #else
+  static uint8_t buf[512];
+  *page_cnt = 4;
+  return buf;
+  #endif
+}
 uint8_t *u8g2_m_16_8_f(uint8_t *page_cnt)
 {
   #ifdef U8G2_USE_DYNAMIC_ALLOC
